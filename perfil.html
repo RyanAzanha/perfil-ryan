@@ -298,13 +298,15 @@
     }
     .job-location { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 12px; }
 
-    .job-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .job-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .job-bullets li {
-      display: flex; gap: 8px;
-      font-size: 0.82rem; line-height: 1.6; color: var(--text-muted);
+      position: relative;
+      padding-left: 18px;
+      font-size: 0.84rem; line-height: 1.65; color: var(--text-muted);
     }
     .job-bullets li::before {
-      content: '›'; color: var(--accent); font-size: 1.1rem; flex-shrink: 0; line-height: 1.5;
+      content: '›'; color: var(--accent); font-size: 1.1rem;
+      position: absolute; left: 0; top: 0; line-height: 1.6;
     }
 
     /* ── Certs ── */
@@ -388,7 +390,14 @@
     /* ── Responsive ── */
     @media (max-width: 600px) {
       .hero { flex-direction: column; text-align: center; padding: 32px 24px; }
-      .hero-info .role { margin: 0 auto 14px; }
+      .hero-info .role {
+        margin: 0 auto 14px;
+        white-space: normal;
+        width: auto !important;
+        border-right: none;
+        animation: fadeIn 0.8s ease 0.5s forwards;
+        overflow: visible;
+      }
       .location { justify-content: center; }
       .section { padding: 24px 20px; }
       .contact-bar { padding: 16px 20px; justify-content: center; }
